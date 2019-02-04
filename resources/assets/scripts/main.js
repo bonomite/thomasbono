@@ -72,7 +72,7 @@ let curr_width,
 const $window = $(window),
       $document = $(document);
 
-import MobileDetect from 'mobile-detect'; 
+
 let md = new MobileDetect(window.navigator.userAgent);
 if(md.mobile() != null){
     isMobile = true;        
@@ -140,7 +140,7 @@ function resizeCheck() {
 	    //$isi_inline = $('#isi_inline');
 
 	    /*forces ios to refresh and not use page caching when using the browser back and forward buttons */
-	    $window.bind("pageshow", function(event) {
+	    $window.bind('pageshow', function(event) {
 	        if (event.originalEvent.persisted) {
 	            window.location.reload();
 	        }

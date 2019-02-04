@@ -33,6 +33,9 @@ module.exports = {
   },
   'rules': {
     'no-console': 0,
+    'no-mixed-spaces-and-tabs':0,
+    'no-unused-vars':0,
+    'no-empty':0,
     'quotes': ['error', 'single'],
     'comma-dangle': [
       'error',
