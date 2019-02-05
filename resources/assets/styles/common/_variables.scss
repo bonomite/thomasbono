@@ -1,5 +1,5 @@
 /** Import Bootstrap functions */
-@import "~bootstrap/scss/functions";
+//@import "~bootstrap/scss/functions";
 
 $theme-colors: (
   primary: #525ddc
@@ -8,3 +8,10 @@ $theme-colors: (
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+$xs : 374px;
+$sm : 767px;
+$md : 1023px;
+$lg : 1365px;
+$xl : 1919px;
+

@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/thomasbono",
-  "devUrl": "http://thomsabono.test",
+  "devUrl": "http://thomasbono.test",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
