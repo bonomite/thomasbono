@@ -12,8 +12,19 @@ module.exports = {
     "at-rule-empty-line-before": null,
     "declaration-empty-line-before": null,
     "selector-pseudo-element-colon-notation": null,
-    
+    "block-opening-brace-space-before": null,
+    "no-missing-end-of-source-newline": null,
+    "comment-whitespace-inside": null,
+    "declaration-colon-space-after": null,
+    "block-closing-brace-newline-before": null,
+    "block-closing-brace-newline-after": null,
+    "comment-empty-line-before": null,
     'string-quotes': null,
+    'block-opening-brace-space-after': null,
+    'block-closing-brace-space-before': null,
+    'block-no-empty': null,
+    'block-opening-brace-newline-after': null,
+    'declaration-block-semicolon-newline-after': null,
     
     'at-rule-no-unknown': [
       true,

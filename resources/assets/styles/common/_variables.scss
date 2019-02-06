@@ -1,9 +1,32 @@
 /** Import Bootstrap functions */
-//@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/functions";
 
-$theme-colors: (
-  primary: #525ddc
+$colors: (
+  absolute-green: #00ff00,
+  absolute-red: #ff0000,
+  off-red: #c80000,
+  dark-blue: #2c3a45,
+  dark-green: #008000,
+  dark-red: #dd2017,
+  dark-yellow: #cac7a7,
+  pale-yellow: #e5e1d1,
+  dark-gray: #333,
+  medium-gray: #ccc,
+  light-gray: #e3e3e3,
+  placeholder-gray: #757575,
+  max-width-shadow: rgba(0, 0, 0, 0.05)
 );
+
+// override/extend Bootstrap theme colors dictionary
+$theme-colors: (
+  primary: #ffffff,
+  secondary: #c8c8c8,
+  tertiary: #9e1826,
+  quaternary: #e1b312
+);
+
+$red:#9e1826;
+$yellow:#e1b312;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
@@ -15,3 +38,34 @@ $md : 1023px;
 $lg : 1365px;
 $xl : 1919px;
 
+@import url('https://fonts.googleapis.com/css?family=Vesper+Libre:400,700');
+$primary-font-family:  'Vesper Libre', serif;
+
+// override Bootstrap font definitions
+$headings-font-family: $primary-font-family;
+$headings-color: theme-color('primary');
+$link-color: theme-color('tertiary');
+
+// Typography
+
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semi-bold: 600;
+$weight-bold: 700;
+$weight-extra-bold: 800;
+$weight-black: 900;
+
+
+//Links
+$link-decoration: none;
+$link-color-hover: #ffffff;
+$link-decoration-hover: none;
+
+// Navbar / Footer
+$navbar-height: 76px;
+$footer-height: 103px;
+$isi-height: 186px;
+
+// max page width
+$max-page-width: 1366px;

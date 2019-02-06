@@ -58,7 +58,6 @@ let curr_width,
     $toggler,
     $header,
     $skipToContent,
-    headerHeight,
     $footer,
     $isi,
     $isi_inline,
@@ -124,18 +123,16 @@ function resizeCheck() {
 }
 
 
-(function($) {
+//(function($) {
 
-	$(document).ready(function(){ 
-	    //$header = $('body > header');
-	    //$skipToContent = $('#skipToContent');
-	    //headerHeight = $header.height();
+	$(document).ready(function(){ 	
+	    $header = $('body > header');
 	    //$footer = $('footer');
-	    //$body = $('body');    
-	    //$navbar = $header.find('.navbar');
-	    //$html = $('html');
-	    //$menu = $navbar.find('#navbarSupportedContent');
-	    //$toggler = $navbar.find('.navbar-toggler');
+	    $body = $('body');    
+	    $navbar = $header.find('.navbar');
+	    $html = $('html');
+	    $menu = $navbar.find('#navbarSupportedContent');
+	    $toggler = $navbar.find('.navbar-toggler');
 	    //$isi = $('#isi');
 	    //$isi_inline = $('#isi_inline');
 
@@ -148,7 +145,7 @@ function resizeCheck() {
 
 	    resizeCheck();
 
-	    //initMenu();
+	    initMenu();
 	    
 	    //initISI();
 
@@ -164,7 +161,77 @@ function resizeCheck() {
 
 
 	}); /*end ready*/
-}); /*end function*/
+//}); /*end function*/
+
+
+function initMenu(){
+    /*mobile menu button*/
+    /*add collapsed class to init the button classes */
+    $toggler.addClass('collapsed');
+    /*makes header full opacity when clicked*/
+    $toggler.on('click',function(e){	    	
+    	e.preventDefault();
+    	e.stopPropagation();
+    	
+    	if(!$header.hasClass('menuOpen')){
+	    	openMenu();
+    	}else{
+	    	closeMenu();
+    	}
+    });
+
+    $toggler.on('mouseover',function(e){
+    	console.log('over');
+    	hamburgerAnim.timeScale(1);
+    	hamburgerAnim.play();
+    });
+
+    $toggler.on('mouseout',function(e){
+    	console.log('out');
+    	hamburgerAnim.timeScale(0.5);
+    	hamburgerAnim.reverse();
+    });
+
+
+    function openMenu(){
+    	menuOpen = true;
+		$header.addClass('menuOpen');
+		$toggler.removeClass('collapsed');
+		$menu.css('display','block');		
+		$header.css('z-index','1030');		
+    	
+    	/*gsap animation for displaying the mobile menu (use '-curr_width' to have it come from the left, also adjust the closeMenu instance)*/
+    	TweenMax.set($menu,{x:curr_width});
+    	TweenMax.to($menu,0.5,{x:0, ease:Sine.easeOut});
+
+    	bodyScroll(false);
+    }
+
+    function closeMenu(){
+    	menuOpen = false;
+		$header.removeClass('menuOpen');
+		$toggler.addClass('collapsed');
+    	
+    	TweenMax.to($menu,0.5,{x:curr_width, ease:Sine.easeIn, onComplete:function(){		    		
+    		$menu.css('display','none');
+    		$header.css('z-index','1000');		    		
+			TweenMax.set($menu,{x:0});
+    	}});    	
+
+    	bodyScroll(true);
+    }
+
+    let hm = $toggler.find('#shield');
+    let hm_bw = hm.find('.bw');
+    let hm_color = hm.find('.color');
+    let hamburgerAnim = new TimelineMax({});
+    hamburgerAnim
+    .to(hm_bw,0.5,{opacity:0})
+    .to(hm_color,0.5,{opacity:1},'-=0.5')
+    hamburgerAnim.pause();
+    
+}
+
 
 
 function init(){

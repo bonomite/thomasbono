@@ -1,0 +1,82 @@
+
+body > header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+  transition: top 0.25s;
+  -webkit-transition: top 0.25s;
+
+  //.container{
+  //  padding: 0;
+    nav{
+    	margin: 0 auto;
+    	width: 100%;
+
+      .navbar-brand{
+
+      }
+      .navbar-toggler{
+      	position: relative;
+      	display: block;
+        outline: none;
+        margin: 0 auto;
+        z-index: 1;
+		.logo{
+			width: 90px;
+			height: 103px;
+			position: absolute;
+			top: 0;
+			left: -45px;
+			right: -45px;
+		    margin: auto;
+          &:hover{
+
+          }
+          &.color{
+            opacity: 0;
+          }
+        }
+      }
+      .navbar-collapse{        
+	      position: absolute;
+	      width: 100%;
+	      top: 0;
+	      left: 0;
+	      background-color: rgba(0, 0, 0, 0.7);
+	      height:100vh;
+	      overflow-y: auto;
+	      -webkit-overflow-scrolling: touch;
+	      padding: 120px 0 50px 0; 
+
+        .navbar-nav{
+          .nav-item{
+            padding:10px 25px;
+            font-family: $primary-font-family;
+            font-weight: $weight-bold;
+            text-align: center;            
+            /* &.active > .nav-link{
+              color:theme-color('quaternary');        
+            } */
+            /*for dropdowns*/
+            /* &.dropdown.active .menu-toggle-group > .nav-link{
+              color:theme-color('quaternary');        
+            } */
+            /*to indicate a child page is selected in the drop down*/
+            /* &.active-child{
+              text-decoration: underline;
+            } */
+            .nav-link{
+              color: theme-color('secondary');
+              &:hover{
+              	color: theme-color('primary');
+              }
+            }
+          }
+        }
+      }
+    }
+  //}
+}
