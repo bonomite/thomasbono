@@ -24,21 +24,32 @@ body > header {
         outline: none;
         margin: 0 auto;
         z-index: 1;
-		.logo{
-			width: 90px;
-			height: 103px;
-			position: absolute;
-			top: 0;
-			left: -45px;
-			right: -45px;
-		    margin: auto;
-          &:hover{
-
-          }
-          &.color{
-            opacity: 0;
-          }
-        }
+        &.collapsed{        	       
+	    	width: 80px;
+	    	//pointer-events:all;
+	        //height: 100vh;
+    	}
+        width: 200px;
+        height: 103px;
+        //pointer-events:none; 
+        #shield{
+        	pointer-events:none;	        
+			.logo{
+				width: 90px;
+				height: 103px;
+				position: absolute;
+				top: 0;
+				left: -45px;
+				right: -45px;
+			    margin: auto;
+			    
+	          &:hover{
+	          }
+	          &.color{
+	            opacity: 0;
+	          }
+	        }
+    	}
       }
       .navbar-collapse{        
 	      position: absolute;
@@ -49,9 +60,12 @@ body > header {
 	      height:100vh;
 	      overflow-y: auto;
 	      -webkit-overflow-scrolling: touch;
-	      padding: 120px 0 50px 0; 
+	      padding: 0 0 50px 0; 
 
         .navbar-nav{
+        	width: 250px;
+        	margin: 0 auto;
+        	padding-top: 120px;
           .nav-item{
             padding:10px 25px;
             font-family: $primary-font-family;

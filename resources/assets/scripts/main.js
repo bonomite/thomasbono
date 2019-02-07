@@ -54,6 +54,7 @@ let curr_width,
     $body,
     $html,
     $menu,
+    $mainMenu,
     menuOpen = false,
     $toggler,
     $header,
@@ -132,6 +133,7 @@ function resizeCheck() {
 	    $navbar = $header.find('.navbar');
 	    $html = $('html');
 	    $menu = $navbar.find('#navbarSupportedContent');
+	    $mainMenu = $navbar.find('#menu-main');
 	    $toggler = $navbar.find('.navbar-toggler');
 	    //$isi = $('#isi');
 	    //$isi_inline = $('#isi_inline');
@@ -172,50 +174,71 @@ function initMenu(){
     $toggler.on('click',function(e){	    	
     	e.preventDefault();
     	e.stopPropagation();
-    	
-    	if(!$header.hasClass('menuOpen')){
-	    	openMenu();
+    	if(isMobile){    		    	
+	    	if(!$header.hasClass('menuOpen')){
+		    	openMenu();
+	    	}else{
+		    	closeMenu();
+	    	}
     	}else{
-	    	closeMenu();
+    		//go home
+    		window.location.href = '/';
     	}
     });
 
-    $toggler.on('mouseover',function(e){
-    	console.log('over');
-    	hamburgerAnim.timeScale(1);
-    	hamburgerAnim.play();
-    });
-
-    $toggler.on('mouseout',function(e){
-    	console.log('out');
-    	hamburgerAnim.timeScale(0.5);
-    	hamburgerAnim.reverse();
-    });
+    initShieldEnter();
+    function initShieldEnter(){
+	    $toggler.on('mouseenter.shield',function(e){
+	    	if($(this).hasClass('collapsed')){
+		    	
+		    	openMenu();
+	    	}
+	    });
+	}
+	
+	function initShieldLeave(){
+	    $mainMenu.on('mouseleave.shield',function(e){    		
+		    	
+		    	closeMenu();
+	    	
+	    });
+	}
 
 
     function openMenu(){
     	menuOpen = true;
+    	console.log('over');
+    	$toggler.off('mouseenter.shield');
+    	initShieldLeave();
+    	hamburgerAnim.timeScale(1);
+    	hamburgerAnim.play();
 		$header.addClass('menuOpen');
 		$toggler.removeClass('collapsed');
 		$menu.css('display','block');		
 		$header.css('z-index','1030');		
     	
     	/*gsap animation for displaying the mobile menu (use '-curr_width' to have it come from the left, also adjust the closeMenu instance)*/
-    	TweenMax.set($menu,{x:curr_width});
-    	TweenMax.to($menu,0.5,{x:0, ease:Sine.easeOut});
+    	TweenMax.set($menu,{y:curr_height});
+    	TweenMax.to($menu,0.5,{y:0, ease:Sine.easeOut});
 
     	bodyScroll(false);
     }
 
     function closeMenu(){
     	menuOpen = false;
+    	console.log('out');    	
+    	hamburgerAnim.timeScale(0.5);
+    	hamburgerAnim.reverse();
 		$header.removeClass('menuOpen');
 		$toggler.addClass('collapsed');
+		$mainMenu.off('mouseleave.shield');
     	
-    	TweenMax.to($menu,0.5,{x:curr_width, ease:Sine.easeIn, onComplete:function(){		    		
+    	TweenMax.to($menu,0.5,{y:curr_height, ease:Sine.easeIn, onComplete:function(){		    		
     		$menu.css('display','none');
     		$header.css('z-index','1000');		    		
-			TweenMax.set($menu,{x:0});
+			TweenMax.set($menu,{y:0});
+			initShieldEnter();
+			
     	}});    	
 
     	bodyScroll(true);
