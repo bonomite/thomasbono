@@ -3,8 +3,8 @@ cd ../../
 pwd
 
 zip -r uploads.zip uploads
-mv uploads.zip themes/emd-serostim/uploads.zip
+mv uploads.zip themes/thomasbono/uploads.zip
 
 cd ../
 
-mv *.sql wp-content/themes/emd-serostim/db.sql
+mv *.sql wp-content/themes/thomasbono/db.sql
