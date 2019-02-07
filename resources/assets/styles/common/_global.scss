@@ -82,6 +82,8 @@ body > header {
             /* &.active-child{
               text-decoration: underline;
             } */
+            &.menu-home{            	
+            }
             .nav-link{
               color: theme-color('secondary');
               &:hover{

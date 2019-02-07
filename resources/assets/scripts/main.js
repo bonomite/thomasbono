@@ -167,6 +167,14 @@ function resizeCheck() {
 
 
 function initMenu(){
+
+	/*hide the home button if touch screen*/
+	if(!isMobile){
+		$mainMenu.find('.menu-home').css('display','none');
+
+		
+	}
+
     /*mobile menu button*/
     /*add collapsed class to init the button classes */
     $toggler.addClass('collapsed');
@@ -186,7 +194,7 @@ function initMenu(){
     	}
     });
 
-    initShieldEnter();
+    if(!isMobile){initShieldEnter();}
     function initShieldEnter(){
 	    $toggler.on('mouseenter.shield',function(e){
 	    	if($(this).hasClass('collapsed')){
