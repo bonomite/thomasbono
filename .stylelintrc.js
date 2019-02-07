@@ -25,6 +25,8 @@ module.exports = {
     'block-no-empty': null,
     'block-opening-brace-newline-after': null,
     'declaration-block-semicolon-newline-after': null,
+    'function-comma-space-after': null,
+    
     
     'at-rule-no-unknown': [
       true,

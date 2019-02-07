@@ -267,6 +267,10 @@ function initMenu(){
 
 function init(){
 	console.log('all set and ready to go.');
+	/*remove mouse over and grey scale effects on mobile device*/
+	if(isMobile){
+		$('.poster').removeClass('bw');
+	}
 }
 
 
