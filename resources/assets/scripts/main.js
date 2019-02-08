@@ -19,6 +19,8 @@ import {Howl, Howler} from 'howler';
 import seeThru from 'seethru';
 window.seeThru = require('seethru');
 
+import Masonry from 'masonry-layout';
+
 /*fontAwesome*/
 // import { library, dom } from '@fortawesome/fontawesome-svg-core';
 // /*add here when using a new icon*/
@@ -67,7 +69,8 @@ let curr_width,
     $navbar,
     isDown = false, 
     isUp = false,
-    mobileBreakPoint = 767;
+    mobileBreakPoint = 767,
+    $grid;
     
 const $window = $(window),
       $document = $(document);
@@ -137,6 +140,7 @@ function resizeCheck() {
 	    $toggler = $navbar.find('.navbar-toggler');
 	    //$isi = $('#isi');
 	    //$isi_inline = $('#isi_inline');
+        $grid = $('.masonry-grid');
 
 	    /*forces ios to refresh and not use page caching when using the browser back and forward buttons */
 	    $window.bind('pageshow', function(event) {
@@ -267,10 +271,46 @@ function initMenu(){
 
 function init(){
 	console.log('all set and ready to go.');
-	/*remove mouse over and grey scale effects on mobile device*/
-	if(isMobile){
-		$('.poster').removeClass('bw');
-	}
+    let $poster = $('#portfolio .projects .poster');
+    /*set up poster clicks to the details page*/
+    if($poster.length){
+
+        $poster.on('click',function(){
+            let rowIndex = $(this).attr('data-index');
+            let title = $(this).attr('data-title');
+            window.open('/details?id='+rowIndex+'&title='+title,'_self');
+        });
+	   /*remove mouse over and grey scale effects on mobile device*/
+        if(isMobile){
+    		$poster.removeClass('bw');
+    	}
+    }
+
+    /*help skip crazy intro animation after back on details page*/
+    if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
+        alert('Got here using the browser "Back" or "Forward" button.');
+    }
+
+
+    /*masonry grid init*/
+    setTimeout(function(){
+        console.log('grid init');
+    if($grid.length){
+        /*$grid.masonry({          
+          itemSelector: '.grid-item',
+          columnWidth: 200,
+        });*/
+
+        var grid = document.querySelector('.masonry-grid');
+        var msnry = new Masonry( grid, {
+          // options...
+          itemSelector: '.grid-item',
+          columnWidth: 200,
+        });
+    }
+    },3000);
+
+
 }
 
 

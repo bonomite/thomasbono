@@ -150,4 +150,17 @@ body > header {
   			}
 		}
 	}
+
+	.details{
+		padding-bottom: 25px;
+		.item{
+			width: 200px;
+			height: 200px; 
+			img{
+			margin-bottom: 25px;
+			width: 100%;
+			height: auto;
+			}
+		}
+	}
 }
