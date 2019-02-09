@@ -303,12 +303,13 @@ function init(){
 
         var grid = document.querySelector('.masonry-grid');
         var msnry = new Masonry( grid, {
-          // options...
-          itemSelector: '.grid-item',
-          columnWidth: 200,
+            // options...
+            columnWidth: '.grid-item',
+            itemSelector: '.grid-item',
+            percentPosition: true,
         });
     }
-    },3000);
+    },500);
 
 
 }

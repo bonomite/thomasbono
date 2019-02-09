@@ -98,7 +98,7 @@ body > header {
 }
 
 .main{
-	padding-top: 70px;
+	padding-top: 120px;
 
 	.projects{
 		padding-bottom: 25px;
@@ -154,12 +154,21 @@ body > header {
 	.details{
 		padding-bottom: 25px;
 		.item{
-			width: 200px;
-			height: 200px; 
+			width: 33.33%;
+			@media (max-width: $md){
+			    width: 50%;
+			}
+			@media (max-width: $sm){
+			    width: 100%;
+			}
+			
+			
+			height: auto; 
 			img{
-			margin-bottom: 25px;
+			padding: 25px;
 			width: 100%;
 			height: auto;
+			display: block;
 			}
 		}
 	}

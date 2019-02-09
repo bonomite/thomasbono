@@ -12,7 +12,7 @@
             
             
             	
-            <div class="row details">               
+            <div class="details">               
             	
                 <?php if( have_rows('project',64) ): 
 
@@ -45,11 +45,7 @@
 						    	<div class="grid-item galleryImage item">
 					            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
 						    	</div>
-
-
-
-
-					            
+						    	
 					        <?php endforeach; ?>
 				    	</div>
 
