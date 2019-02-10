@@ -1,1 +1,1 @@
-<p>MOTION PRESENTATION</p>
+<p style="text-align: center">MOTION PRESENTATION</p>

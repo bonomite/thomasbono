@@ -92,8 +92,9 @@
 
 					        <?php foreach( $gallery as $image ): ?>
 					            
-						    	<div class="grid-item galleryImage item" data-img="{{$image['url']}}">
+						    	<div class="grid-item item galleryImage" data-img="{{$image['url']}}">
 					            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+					            	<div class="enlarge-icon">@include('svgs.enlarge')</div>
 						    	</div>
 
 					        <?php endforeach; ?>

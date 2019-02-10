@@ -1,1 +1,1 @@
-<p>PHOTOGRAPHY PRESENTATION</p>
+<p style="text-align: center">PHOTOGRAPHY PRESENTATION</p>

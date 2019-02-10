@@ -1,1 +1,1 @@
-<p>SITES PRESENTATION</p>
+<p style="text-align: center">SITES PRESENTATION</p>
