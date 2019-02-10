@@ -309,17 +309,7 @@ function init(){
             columnWidth: '.grid-item',
             itemSelector: '.grid-item',
             percentPosition: true,
-        });
-
-        var grid2 = document.querySelector('.masonry-grid2');
-        var msnry2 = new Masonry( grid2, {
-            // options...
-            columnWidth: '.grid-item',
-            itemSelector: '.grid-item',
-            percentPosition: true,
-        });
-
-        
+        });        
 
     }
     },1000);

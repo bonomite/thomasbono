@@ -52,37 +52,6 @@
 					
 
 
-					<!-- if its a LINK or VIDEO or CODEPEN or GALLERY -->
-					<?php 
-					if( !empty($media) ): ?>						
-						<div class="masonry-grid2">
-
-						
-						<?php foreach( $media as $item ): 
-
-							$title = $item['title'];                        
-	                        $image = $item['image'];                        
-	                        $youtubeID = $item['youtubeID'];
-	                        $codepenID = $item['codepenID'];
-	                        $weblink = $item['weblink'];			                        
-							//var_dump($item)
-							?>
-
-							@if(!empty($weblink))
-						        <p>web link</p>
-						    @elseif (!empty($youtubeID))
-						        <p>youtube link {{$youtubeID}}</p>
-							    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$youtubeID}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-						    @elseif (!empty($codepenID))
-						        <p>codepen</p>
-						    @endif
-
-
-							<div> this work? {{$weblink}}</div>
-							
-						<?php endforeach; ?>
-						</div>
-					<?php endif; ?>
 
 
 
@@ -94,7 +63,42 @@
 															
 								
 
+							<?php 
+						if( !empty($media) ): ?>						
+							
 
+							
+							<?php foreach( $media as $item ): 
+
+								$title = $item['title'];                        
+		                        $image = $item['image'];                        
+		                        $youtubeID = $item['youtubeID'];
+		                        $codepenID = $item['codepenID'];
+		                        $weblink = $item['weblink'];			                        
+								//var_dump($item)
+								?>
+
+								@if(!empty($weblink))
+							        <p>web link</p>
+							    @elseif (!empty($youtubeID))							        
+								    <div class="grid-item galleryImage item video">
+								    	<div class="videoWrapper">
+								    		<iframe src="https://www.youtube.com/embed/{{$youtubeID}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								    	</div>
+									</div>
+							    @elseif (!empty($codepenID))
+							        <div class="grid-item galleryImage item codepen">
+								    	<div class="videoWrapper">
+							        		<iframe style="width: 100%;" scrolling="no" title="SVG Morph" src="//codepen.io/bonomite/embed/{{$codepenID}}/?theme-id=0&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+											</iframe>
+										</div>
+									</div>
+							    @endif
+								
+								
+							<?php endforeach; ?>
+							
+						<?php endif; ?>
 
 
 
