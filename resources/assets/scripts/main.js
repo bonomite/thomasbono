@@ -71,7 +71,9 @@ let curr_width,
     isUp = false,
     mobileBreakPoint = 767,
     $grid,
-    $goBackArrow;
+    $goBackArrow,
+    $galleryImage,
+    $theModal;
 
     
 const $window = $(window),
@@ -144,6 +146,8 @@ function resizeCheck() {
 	    //$isi_inline = $('#isi_inline');
         $grid = $('.masonry-grid');
         $goBackArrow = $('#goBackArrow');
+        $galleryImage = $grid.find('.galleryImage');
+        $theModal = $('#bonoModalCenter');
 	    /*forces ios to refresh and not use page caching when using the browser back and forward buttons */
 	    $window.bind('pageshow', function(event) {
 	        if (event.originalEvent.persisted) {
@@ -314,6 +318,21 @@ function init(){
     }
     },1000);
 
+
+    /*gallery images expand*/
+    if($galleryImage.length){
+        $galleryImage.on('click',function(){
+            console.log('clicking');
+            let th = $(this);
+            let img = th.attr('data-img');
+            fullscreenImage(img);
+        })
+    }
+
+    function fullscreenImage(url){
+        $theModal.find('.modal-body img').attr('src',url);
+        $theModal.modal();
+    }
 
     if($goBackArrow.length){
         $goBackArrow.on('click',function(){

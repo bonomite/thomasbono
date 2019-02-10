@@ -1,20 +1,31 @@
 {{--
-  Template Name: Bono Template Design
+  Template Name: Bono Projects Template
 --}}
 
 @extends('layouts.app')
 
 @section('content')
-	
-	<div id="portfolio" class="section pt-0 design">
+	<?php 
+        $pagename = get_query_var('pagename');
+    ?>
+	<div id="presentation">
+
+        
+
+        @include('presentations.'.$pagename) 
+
+         
+    </div>
+    <?php ?>
+    <div id="portfolio" class="section pt-0">
         <div class="container">
-            
-            <h1>Design sdlkfj</h1>
+                        
             	
             <div class="row projects">               
             	
                 <?php if( have_rows('project',64) ): 
-
+                        $pagename = get_query_var('pagename');
+                    
                     while( have_rows('project',64) ): the_row(); 
 
                         $type = get_sub_field('type');
@@ -25,13 +36,13 @@
                         $urlvar = strtolower(implode('-',explode(" ", $title)));
                         $index = get_row_index();
 
-
                         
                         ?>
 
-                        @if(in_array('design', $type))
+                        @if(in_array($pagename, $type))
 
                         <div class="col-sm-6 col-lg-4">
+                            <h1>{{$pagename}}</h1>
                             <!-- <img class="poster" src="{{$poster}}"> -->
                             <div class="poster bw" data-index="{{$index}}" data-title="{{$urlvar}}" style="background-image: url({{$poster}});"></div>
                             
