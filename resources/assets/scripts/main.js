@@ -70,7 +70,9 @@ let curr_width,
     isDown = false, 
     isUp = false,
     mobileBreakPoint = 767,
-    $grid;
+    $grid,
+    $goBackArrow;
+
     
 const $window = $(window),
       $document = $(document);
@@ -141,7 +143,7 @@ function resizeCheck() {
 	    //$isi = $('#isi');
 	    //$isi_inline = $('#isi_inline');
         $grid = $('.masonry-grid');
-
+        $goBackArrow = $('#goBackArrow');
 	    /*forces ios to refresh and not use page caching when using the browser back and forward buttons */
 	    $window.bind('pageshow', function(event) {
 	        if (event.originalEvent.persisted) {
@@ -308,8 +310,35 @@ function init(){
             itemSelector: '.grid-item',
             percentPosition: true,
         });
+
+        var grid2 = document.querySelector('.masonry-grid2');
+        var msnry2 = new Masonry( grid2, {
+            // options...
+            columnWidth: '.grid-item',
+            itemSelector: '.grid-item',
+            percentPosition: true,
+        });
+
+        
+
     }
-    },500);
+    },1000);
+
+
+    if($goBackArrow.length){
+        $goBackArrow.on('click',function(){
+
+            if(document.referrer.split('/')[2]!=location.hostname){
+                //User came from other domain or from direct
+                window.history.go(-1);
+            }else{
+                let where = $(this).attr('data-where');
+                window.open('/'+where+'/','_self');
+            }
+
+            
+        });
+    }
 
 
 }
