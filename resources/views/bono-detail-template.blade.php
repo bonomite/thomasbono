@@ -41,7 +41,7 @@
 
 
 					<?php 
-					if( $gallery ): ?>
+					if( $gallery || $media): ?>
 						<div class="masonry-grid">
 						<div class="grid-item galleryImage item" style="height: 0; padding: 0;"></div>
 
@@ -58,7 +58,7 @@
 		                        $youtubeID = $item['youtubeID'];
 		                        $codepenID = $item['codepenID'];
 		                        $weblink = $item['weblink'];			                        
-								//var_dump($item)
+								
 								?>
 
 								@if(!empty($weblink))
@@ -71,7 +71,7 @@
 							    @elseif (!empty($youtubeID))							        
 								    <div class="grid-item item video">
 								    	<div class="videoWrapper">
-								    		<iframe src="https://www.youtube.com/embed/{{$youtubeID}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								    		<iframe src="https://www.youtube.com/embed/{{$youtubeID}}?rel=0&showinfo=0&autohide=1&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								    	</div>
 									</div>
 							    @elseif (!empty($codepenID))

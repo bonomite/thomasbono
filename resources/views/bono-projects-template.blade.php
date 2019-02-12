@@ -42,7 +42,7 @@
                         @if(in_array($pagename, $type))
 
                         <div class="col-sm-6 col-lg-4">
-                            <h1>{{$pagename}}</h1>
+                            
                             <!-- <img class="poster" src="{{$poster}}"> -->
                             <div class="poster bw" data-index="{{$index}}" data-title="{{$urlvar}}" style="background-image: url({{$poster}});"></div>
                             
