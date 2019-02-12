@@ -9,7 +9,7 @@
   	@include('bono-modal')
 
 	<div id="details" class="section">
-        <div class="container">
+        <div class="">
             
             
             	
@@ -38,7 +38,19 @@
 
 					<div id="goBackArrow" data-where="{{$type[0]}}">@include('svgs.backButton')</div>
 
-
+					<div class="row info">
+						<div class="cols col-md-6">
+							<h1>{{$title}}</h1>
+							{!!$desc!!}
+							
+						</div>
+						<div class="cols col-md-6 tech">
+							<p class="mb-0">TECHNOLOGIES:</p>
+							<div class="bullets">
+								{!!$tools!!}
+							</div>
+						</div>
+					</div>
 
 					<?php 
 					if( $gallery || $media): ?>

@@ -67,6 +67,7 @@ let curr_width,
     isi_compress = false,
     isi_compress_buffer,
     $navbar,
+    $navbarCollapse,
     isDown = false, 
     isUp = false,
     mobileBreakPoint = 767,
@@ -137,7 +138,8 @@ function resizeCheck() {
 	    $header = $('body > header');
 	    //$footer = $('footer');
 	    $body = $('body');    
-	    $navbar = $header.find('.navbar');
+        $navbar = $header.find('.navbar');
+	    $navbarCollapse = $navbar.find('.navbar-collapse');
 	    $html = $('html');
 	    $menu = $navbar.find('#navbarSupportedContent');
 	    $mainMenu = $navbar.find('#menu-main');
@@ -233,13 +235,13 @@ function initMenu(){
 		$header.addClass('menuOpen');
 		$toggler.removeClass('collapsed');
 		$menu.css('display','block');		
-		$header.css('z-index','1030');		
+		$header.css('z-index','1030');        	
     	
     	/*gsap animation for displaying the mobile menu (use '-curr_width' to have it come from the left, also adjust the closeMenu instance)*/
-    	TweenMax.set($menu,{y:curr_height});
-    	TweenMax.to($menu,0.5,{y:0, ease:Sine.easeOut});
+    	TweenMax.set($menu,{y:-$navbarCollapse.height()});
+    	TweenMax.to($menu,0.25,{y:0, ease:Sine.easeOut});
 
-    	bodyScroll(false);
+    	//bodyScroll(false);
     }
 
     function closeMenu(){
@@ -251,7 +253,7 @@ function initMenu(){
 		$toggler.addClass('collapsed');
 		$mainMenu.off('mouseleave.shield');
     	
-    	TweenMax.to($menu,0.5,{y:curr_height, ease:Sine.easeIn, onComplete:function(){		    		
+    	TweenMax.to($menu,0.25,{y:-$navbarCollapse.height(), ease:Sine.easeIn, onComplete:function(){		    		
     		$menu.css('display','none');
     		$header.css('z-index','1000');		    		
 			TweenMax.set($menu,{y:0});
@@ -259,7 +261,7 @@ function initMenu(){
 			
     	}});    	
 
-    	bodyScroll(true);
+    	//bodyScroll(true);
     }
 
     let hm = $toggler.find('#shield');
