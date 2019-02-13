@@ -6,18 +6,18 @@ import TweenLite, { TweenPlugin, Ease, Power0, Power1, Power2, Power3, Power4, L
 import TweenMax from 'gsap/TweenMax';
 import TimelineMax from 'gsap/TimelineMax';
 import { Back, Elastic, Bounce, RoughEase, SlowMo, SteppedEase, Circ, Expo, Sine, ExpoScaleEase } from 'gsap/EasePack.js';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
-window.ScrollMagic = require('scrollmagic/scrollmagic/uncompressed/ScrollMagic');
-import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
-import 'scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic';
-import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+//import ScrollToPlugin from 'gsap/ScrollToPlugin';
+//window.ScrollMagic = require('scrollmagic/scrollmagic/uncompressed/ScrollMagic');
+//import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+//import 'scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic';
+//import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
 import MobileDetect from 'mobile-detect'; 
 import 'js-throttle-debounce/src/js-throttle-debounce';
 
-import {Howl, Howler} from 'howler';
-import seeThru from 'seethru';
-window.seeThru = require('seethru');
+//import {Howl, Howler} from 'howler';
+//import seeThru from 'seethru';
+//window.seeThru = require('seethru');
 
 import Masonry from 'masonry-layout';
 
@@ -296,7 +296,7 @@ function init(){
 
     /*help skip crazy intro animation after back on details page*/
     if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
-        alert('Got here using the browser "Back" or "Forward" button.');
+        //alert('Got here using the browser "Back" or "Forward" button.');
     }
 
 

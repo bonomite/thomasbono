@@ -9,7 +9,7 @@
   	@include('bono-modal')
 
 	<div id="details" class="section">
-        <div class="">
+        <div class="container">
             
             
             	

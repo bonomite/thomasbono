@@ -66,11 +66,11 @@ body > header {
 	      padding: 0 0 50px 0; 
 
         .navbar-nav{
-        	width: 250px;
+        	/* width: 250px; */
         	margin: 0 auto;
         	padding-top: 120px;
           .nav-item{
-            padding:10px 25px;
+            padding:10px 0;
             font-family: $primary-font-family;
             font-weight: $weight-bold;
             text-align: center;            
@@ -99,74 +99,107 @@ body > header {
     }
   //}
 }
-.container{
-	max-width: $max-page-width;
 
-	ul{
-		padding-left: 20px;
-		li{
+/*social icons*/
+.social{width: 30px; 
+	height: 30px; 
+	background:transparent url(assets/images/icon-social-sprite.png); 
+	margin:10px 10px 10px 0; 
+	position: relative; 
+	display: block; 
+	float: left; 
+	background-size: 150px 90px; 
+	border-radius: 2px;
+	cursor: pointer;
+}
+.socialE{background-position: -120px 0;}
+.socialE:hover{background-position: -120px 60px;}
+.socialE:active{background-position: -120px 120px;}
 
-		}
+.socialIN{background-position: -30px 0;}
+.socialIN:hover{background-position: -30px 60px;}
+.socialIN:active{background-position: -30px 120px;}
+
+.socialT{background-position: -60px 0;}
+.socialT:hover{background-position: -60px 60px;}
+.socialT:active{background-position: -60px 120px;}
+
+.socialFB{background-position: 0 0;}
+.socialFB:hover{background-position: 0 60px;}
+.socialFB:active{background-position: 0 120px;}
+
+.socialPDF{background-position: -90px 0;}
+.socialPDF:hover{background-position: -90px 60px;}
+.socialPDF:active{background-position: -90px 120px;}
+
+ul{
+	padding-left: 20px;
+	li{
+
 	}
+}
+a{
+	cursor: pointer;
+}
+.main{
+	padding-top: 120px;
 
-	.main{
-		padding-top: 120px;
-
-		#bonoModalCenter{
-			width: 100%;
-			height: 100%;
-			padding:0 !important;
-			.modal-dialog{
-				max-width: 100%;
+	#bonoModalCenter{
+		width: 100%;
+		height: 100%;
+		padding:0 !important;
+		.modal-dialog{
+			max-width: 100%;
+			min-height: 100vh;
+    		margin: 0;
+			.modal-content{
 				min-height: 100vh;
-	    		margin: 0;
-				.modal-content{
-					min-height: 100vh;
-					border: none;
-					border-radius: 0;
-					.modal-body{
-						padding: 0;
-						max-height: 100vh;					
-						img{
-							max-width:100%;
-							max-height:100vh;
-							display: block;
-						    position: absolute;
-						    top: 0;
-						    bottom: 0;
-						    margin: auto;
-						    left: 0;
-						    right: 0;
-						}
+				border: none;
+				border-radius: 0;
+				.modal-body{
+					padding: 0;
+					max-height: 100vh;					
+					img{
+						max-width:100%;
+						max-height:100vh;
+						display: block;
+					    position: absolute;
+					    top: 0;
+					    bottom: 0;
+					    margin: auto;
+					    left: 0;
+					    right: 0;
 					}
-					.modal-footer{
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						margin:auto;
-						button{
-							background:none;
-							border:none;
-							outline: none;
-							box-shadow: none;
-							width: 60px;
-							height: 60px;
-							&:hover{
-					    		svg .st0{
-					    			fill:#000000;
-					    		}
-					    	}
-							svg{
-								width: 100%;
-								height: 100%;
-							}
+				}
+				.modal-footer{
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					margin:auto;
+					button{
+						background:none;
+						border:none;
+						outline: none;
+						box-shadow: none;
+						width: 60px;
+						height: 60px;
+						&:hover{
+				    		svg .st0{
+				    			fill:#000000;
+				    		}
+				    	}
+						svg{
+							width: 100%;
+							height: 100%;
 						}
 					}
 				}
 			}
 		}
-
+	}
+	.container{
+		max-width: $max-page-width;
 		.projects{
 			padding-bottom: 25px;
 			.poster{
@@ -411,6 +444,49 @@ body > header {
 						-webkit-transition: opacity 0.2s, transform 0.2s;
 					}
 				}			
+			}
+		}
+	}
+}
+
+
+
+
+
+#presentation{
+	h4{
+		color: #c8c8c8;
+	}
+}
+
+.home{
+	background-image: url(assets/images/bgPattern.jpg);
+	background-repeat: repeat;
+	main{
+		padding-top: 0;
+
+		#castle-hero{
+			background-position: 50% 100%;
+			background-size: cover;
+			position: relative;
+			display: block;
+			margin:0 auto;
+			width: 100%;
+			height: 450px;
+			-webkit-box-shadow: 0 0 10px 2px rgba(0,0,0, 0.6);
+    		box-shadow: 0 0 10px 2px rgba(0,0,0, 0.6);
+    		@media (max-width: $sm){
+    		    height: 70vw;
+    		}    		
+		}
+		section{
+			padding:50px 0;
+			.container{
+				max-width: $max-page-width;
+				h1,p{
+					color: #646464;
+					font-family: $primary-font-family;
+				}
 			}
 		}
 	}
