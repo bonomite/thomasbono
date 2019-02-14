@@ -31,7 +31,7 @@
                         $type = get_sub_field('type');
                         $poster = get_sub_field('poster');                        
                         $title = get_sub_field('title');                        
-                        $link = get_sub_field('link');
+                        //$link = get_sub_field('link');
 
                         $urlvar = strtolower(implode('-',explode(" ", $title)));
                         $index = get_row_index();
@@ -44,7 +44,9 @@
                         <div class="col-sm-6 col-lg-4">
                             
                             <!-- <img class="poster" src="{{$poster}}"> -->
-                            <div class="poster bw" data-index="{{$index}}" data-title="{{$urlvar}}" style="background-image: url({{$poster}});"></div>
+                            <div class="poster bw" data-index="{{$index}}" data-title="{{$urlvar}}" style="background-image: url({{$poster}});">
+                                <div class="title-holder"><h4>{{$title}}</h4></div>
+                            </div>
                             
                         </div>
 

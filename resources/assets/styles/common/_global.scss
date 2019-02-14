@@ -237,6 +237,12 @@ a{
 					-webkit-filter: grayscale(100%);
 		  			filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='gray'><feColorMatrix in='SourceGraphic' type='saturate' values='0' /></filter></svg>#gray");
 		  			filter:grayscale(100%);
+		  			@media (max-width: $sm){
+		  			    -webkit-filter: grayscale(0%);
+		  			filter:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='gray'><feColorMatrix in='SourceGraphic' type='saturate' values='0' /></filter></svg>#gray");
+		  			filter:grayscale(0%);
+		  			}
+		  			
 
 		  			&:hover{
 		  				-webkit-filter: grayscale(0%);
@@ -247,7 +253,55 @@ a{
 						-o-transform: scale(1.1);
 						-ms-transform: scale(1.1);
 						transform: scale(1.1);
+
+						.title-holder{
+							opacity: 1;
+							h4{
+								opacity: 1;
+								-moz-transform: translateY(0);
+								-webkit-transform: translateY(0);
+								-o-transform: translateY(0);
+								-ms-transform: translateY(0);
+								transform: translateY(0);
+							}
+						}
 		  			}
+	  			}
+	  			.title-holder{
+	  				transition: all 0.2s;
+					-webkit-transition: all 0.2s;
+	  				background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.8) 100%);
+					background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 100%);
+					background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 100%);
+					filter: progid:dximagetransform.microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000',GradientType=0);
+					position: absolute;
+					display: block;
+					bottom: 0;
+					width: 100%;
+	  				opacity: 0;
+					@media (max-width: $sm){
+					    opacity: 1;					
+					}
+	  				h4{
+	  					transition: all 0.3s;
+						-webkit-transition: all 0.3s;
+	  					padding: 25px; 
+	  					margin: 10% 0 0 0;
+	  					opacity: 0;
+						-moz-transform: translateY(50px);
+						-webkit-transform: translateY(50px);
+						-o-transform: translateY(50px);
+						-ms-transform: translateY(50px);
+						transform: translateY(50px);
+						@media (max-width: $sm){
+						    opacity: 1;
+						    -moz-transform: translateY(0);
+							-webkit-transform: translateY(0);
+							-o-transform: translateY(0);
+							-ms-transform: translateY(0);
+							transform: translateY(0);
+						}						
+	  				}
 	  			}
 			}
 		}
