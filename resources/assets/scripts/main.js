@@ -278,7 +278,7 @@ function initMenu(){
 
 
 function init(){
-	console.log('all set and ready to go.');
+	//console.log('all set and ready to go.');
     let $poster = $('#portfolio .projects .poster');
     /*set up poster clicks to the details page*/
     if($poster.length){
@@ -321,20 +321,36 @@ function init(){
     },1000);
 
 
+
     /*gallery images expand*/
     if($galleryImage.length){
-        $galleryImage.on('click',function(){
-            console.log('clicking');
+        $galleryImage.on('click',function(){            
             let th = $(this);
             let img = th.attr('data-img');
-            fullscreenImage(img);
+            let hash = th.attr('id');
+            fullscreenImage(img,hash);
         })
+
+        let fullScreenCloser = $theModal.find('.modal-footer .btn');
+        fullScreenCloser.on('click',function(){
+        	/*clear the hash*/        	
+        	history.pushState(null, null, ' ');        	
+        })
+
+	    /*gallery detect is a hash auto enlrge*/
+	    if(window.location.hash) {
+	    	console.log('window.location.hash = '+window.location.hash);
+			let theHash = window.location.hash;
+			$(theHash).click();
+		} 
     }
 
-    function fullscreenImage(url){
+    function fullscreenImage(url,hash){
+    	window.location.hash = hash;
         $theModal.find('.modal-body img').attr('src',url);
         $theModal.modal();
     }
+
 
     if($goBackArrow.length){
         $goBackArrow.on('click',function(){

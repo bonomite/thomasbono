@@ -11,7 +11,7 @@
 	<div id="details" class="section">
         <div class="container">
             
-            
+            <div class="fb-share-button" data-href="https://www.thomasbono.com/details/?id=15&amp;title=yellowstone-national-park#yellowstone_01" data-layout="button" data-size="large" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thomasbono.com%2Fdetails%2F%3Fid%3D15%26title%3Dyellowstone-national-park%23yellowstone_01&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
             	
             <div class="details">               
             	
@@ -65,7 +65,8 @@
 							
 							<?php foreach( $media as $item ): 
 
-								$title = $item['title'];                        
+								$gtitle = $item['title'];
+								$hash = strtolower(implode('-',explode(" ", $gtitle)));								 
 		                        $image = $item['image'];                        
 		                        $youtubeID = $item['youtubeID'];
 		                        $codepenID = $item['codepenID'];
@@ -74,20 +75,20 @@
 								?>
 
 								@if(!empty($weblink))
-							        <div class="grid-item item link">
+							        <div id="{{$hash}}" class="grid-item item link">
 							        	<a href="{{$weblink}}" target="_blank">
 								        	<img src="{{$image}}">
 								        	@include('svgs.link')
 							        	</a>
 							        </div>
 							    @elseif (!empty($youtubeID))							        
-								    <div class="grid-item item video">
+								    <div id="{{$hash}}" class="grid-item item video">
 								    	<div class="videoWrapper">
 								    		<iframe src="https://www.youtube.com/embed/{{$youtubeID}}?rel=0&showinfo=0&autohide=1&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								    	</div>
 									</div>
 							    @elseif (!empty($codepenID))
-							        <div class="grid-item item codepen">
+							        <div id="{{$hash}}" class="grid-item item codepen">
 								    	
 											<iframe height="402" style="width: 100%;" scrolling="no" title="SVG Morph" src="//codepen.io/bonomite/embed/{{$codepenID}}/?height=402&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
 											  See the Pen <a href='https://codepen.io/bonomite/pen/{{$codepenID}}/'>SVG Morph</a> by Thomas Bono
@@ -102,9 +103,12 @@
 						<?php endif; ?>
 
 
-					        <?php foreach( $gallery as $image ): ?>
-					            
-						    	<div class="grid-item item galleryImage" data-img="{{$image['url']}}">
+					        <?php foreach( $gallery as $image ): 
+					            	$gtitle = $image['title'];
+					            	$imgURL = $image['url'];
+									$hash = strtolower(implode('-',explode(" ", $gtitle)));	
+								?>
+						    	<div id="{{$gtitle}}" class="grid-item item galleryImage" data-img="{{$imgURL}}">
 					            	<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
 					            	<div class="enlarge-icon">@include('svgs.enlarge')</div>
 						    	</div>
