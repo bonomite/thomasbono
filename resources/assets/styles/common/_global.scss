@@ -199,7 +199,7 @@ a{
 		}
 	}
 	.container{
-		max-width: $max-page-width;
+		//max-width: $max-page-width;
 		.projects{
 			padding-bottom: 25px;
 			.poster{
@@ -306,7 +306,7 @@ a{
 			}
 		}
 
-		.details{
+		.details,.alone{
 			padding-bottom: 25px;
 			.info{											
 				.cols{
@@ -318,7 +318,7 @@ a{
 		    				padding-top: 0;
 		    			}		    			
 		    		}
-					h1{
+					h1,h4{
 						color:theme-color('secondary') !important;
 					}
 					p,li{
@@ -498,6 +498,16 @@ a{
 						-webkit-transition: opacity 0.2s, transform 0.2s;
 					}
 				}			
+			}
+			.aloneImgHolder{
+				img{
+					position: relative;
+					display: block;
+					margin: 30px auto;
+					width: 100%;
+					height: auto;
+					max-width: auto;
+				}
 			}
 		}
 	}

@@ -34,7 +34,7 @@
                         //$link = get_sub_field('link');
 
                         $urlvar = strtolower(implode('-',explode(" ", $title)));
-                        $index = get_row_index();
+                        $index = get_row_index()-1;
 
                         
                         ?>
@@ -44,9 +44,11 @@
                         <div class="col-sm-6 col-lg-4">
                             
                             <!-- <img class="poster" src="{{$poster}}"> -->
-                            <div class="poster bw" data-index="{{$index}}" data-title="{{$urlvar}}" style="background-image: url({{$poster}});">
-                                <div class="title-holder"><h4>{{$title}}</h4></div>
-                            </div>
+                            <a class="" href="/details?project={{$index}}&title={{$urlvar}}"> 
+                                <div  class="poster bw" style="background-image: url({{$poster}});">
+                                    <div class="title-holder"><h4>{{$title}}</h4></div>
+                                </div>
+                            </a>
                             
                         </div>
 

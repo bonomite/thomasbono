@@ -283,11 +283,11 @@ function init(){
     /*set up poster clicks to the details page*/
     if($poster.length){
 
-        $poster.on('click',function(){
+       /* $poster.on('click',function(){
             let rowIndex = $(this).attr('data-index');
             let title = $(this).attr('data-title');
             window.open('/details?id='+rowIndex+'&title='+title,'_self');
-        });
+        });*/
 	   /*remove mouse over and grey scale effects on mobile device*/
         if(isMobile){
     		$poster.removeClass('bw');
@@ -318,12 +318,12 @@ function init(){
         });        
 
     }
-    },1000);
+    },2000);
 
 
 
     /*gallery images expand*/
-    if($galleryImage.length){
+   /* if($galleryImage.length){
         $galleryImage.on('click',function(){            
             let th = $(this);
             let img = th.attr('data-img');
@@ -333,11 +333,11 @@ function init(){
 
         let fullScreenCloser = $theModal.find('.modal-footer .btn');
         fullScreenCloser.on('click',function(){
-        	/*clear the hash*/        	
+        	//clear the hash        	
         	history.pushState(null, null, ' ');        	
         })
 
-	    /*gallery detect is a hash auto enlrge*/
+	    //gallery detect is a hash auto enlrge
 	    if(window.location.hash) {
 	    	console.log('window.location.hash = '+window.location.hash);
 			let theHash = window.location.hash;
@@ -349,7 +349,7 @@ function init(){
     	window.location.hash = hash;
         $theModal.find('.modal-body img').attr('src',url);
         $theModal.modal();
-    }
+    }*/
 
 
     if($goBackArrow.length){
