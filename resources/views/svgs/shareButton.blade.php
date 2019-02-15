@@ -12,11 +12,25 @@
 		c-1.3,1-1.9,2.1-1.8,3.8C74.2,65.6,74.1,79.4,74.1,83.3z M66.5,20.6c-10.7,0.1-19.8,3.1-27,10.9c-6.2,6.7-11.9,21.3-10.6,27
 		c11.2-20.9,27.7-22.1,37.6-21.2c0,4.7,0,9.5,0,14.8C76.9,44.4,86.8,36.9,97,29.3c-10.2-7.7-20.1-15.2-30.5-23
 		C66.5,11.4,66.5,15.9,66.5,20.6z"/>
-	<path d="M74.1,83.3c0-4,0.1-17.7,0-21.4c-0.1-1.7,0.5-2.8,1.8-3.8c2.3-1.8,4.6-3.7,7.2-5.7c0.1,1.1,0.2,1.7,0.2,2.4
-		c0,7.4,0,24.8,0,32.3c0,4.1-1.5,5.6-5.7,5.6c-22.2,0-44.4,0-66.5,0c-4,0-5.5-1.5-5.5-5.5c0-16.7,0-43.3,0-60c0-3.9,1.5-5.4,5.3-5.4
-		c8.3,0,16.6,0,24.9,0c0.5,0,1.1,0.1,1.7,0.1c-3.1,2.9-6,5.8-9,8.6c-0.4,0.4-1.3,0.4-2,0.4c-3.8,0-7.6,0-11.6,0
-		c0,14.2,0,38.3,0,52.6C34.5,83.3,54.2,83.3,74.1,83.3z"/>
-	<path d="M66.5,20.6c0-4.8,0-9.2,0-14.3c10.3,7.8,20.3,15.3,30.5,23c-10.2,7.6-20.1,15-30.5,22.7c0-5.3,0-10.1,0-14.8
-		c-9.9-0.9-26.3,0.3-37.6,21.2c-1.3-5.7,4.4-20.3,10.6-27C46.7,23.7,55.8,20.7,66.5,20.6z"/>
 </g>
 </svg>
+<div id="shareButtons">
+	<div class="row m-0">
+		<a target="_blank" class="col-12 p-0" href="https://www.facebook.com/sharer.php?u={{$thisURL}}" title="Share to Facebook">
+			<div class=" my-auto socialButton fb">@include('svgs.fb')</div>
+		</a>
+
+		<a target="_blank" class="col-12 p-0" href="https://twitter.com/share?url={{$thisURL}}&text={{$title}}" title="Share to Twitter">
+			<div class="my-auto socialButton tw">@include('svgs.tw')</div>
+		</a>
+
+		<a target="_blank" class="col-12 p-0" href="https://www.linkedin.com/shareArticle?url={{$thisURL}}&title={{$title}}" title="Share to Linked In">
+			<div class="my-auto socialButton li">@include('svgs.li')</div>
+		</a>
+
+		 <a target="_blank" class="col-12 p-0" href="'mailto:?subject=' . {{$title}} . '&body={{$desc}}: '. {{$thisURL}} .'" title="Share by Email'">
+		 	<div class="my-auto socialButton em">@include('svgs.em')</div>
+		 </a>
+
+	</div>
+</div>

@@ -8,6 +8,9 @@
 	<?php 
         $pagename = get_query_var('pagename');
     ?>
+    <div id = "shareButtonHolder" class="" data-href="{{$thisURL}}" >
+            @include('svgs/shareButton')                            
+    </div>
 	<div id="presentation">
 
         

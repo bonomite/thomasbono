@@ -13,6 +13,10 @@
   <?php $castle = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'full');?>
   <div id="castle-hero" style="background-image: url('<?php echo $castle[0]?>');"></div>
 
+  <div id = "shareButtonHolder" class="" data-href="{{$thisURL}}" >
+      @include('svgs/shareButton')                
+  </div>
+  
   <section id="s1" class="section">
   	<div class="container">
 		<div class="row">

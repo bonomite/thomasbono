@@ -8,9 +8,7 @@
 
 	<div id="details" class="section">
         <div class="container">
-            
-            <div class="fb-share-button" data-href="https://www.thomasbono.com/details/?id=15&amp;title=yellowstone-national-park#yellowstone_01" data-layout="button" data-size="large" data-mobile-iframe="false"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thomasbono.com%2Fdetails%2F%3Fid%3D15%26title%3Dyellowstone-national-park%23yellowstone_01&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-            	
+                        	
             <div class="details">               
             	
                 <?php if( have_rows('project',64) ): 
@@ -34,6 +32,10 @@
 
 					?>
 
+					<div id = "shareButtonHolder" class="" data-href="{{$thisURL}}" >
+				    		@include('svgs/shareButton')				    		
+				  	</div>
+					
 					<div id="goBackArrow" data-where="{{$type[0]}}">@include('svgs.backButton')</div>
 
 					<div class="row info">

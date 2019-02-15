@@ -73,6 +73,7 @@ let curr_width,
     mobileBreakPoint = 767,
     $grid,
     $goBackArrow,
+    $shareButton,
     $galleryImage,
     $theModal;
 
@@ -148,6 +149,7 @@ function resizeCheck() {
 	    //$isi_inline = $('#isi_inline');
         $grid = $('.masonry-grid');
         $goBackArrow = $('#goBackArrow');
+        $shareButton = $('#shareButton');
         $galleryImage = $grid.find('.galleryImage');
         $theModal = $('#bonoModalCenter');
 	    /*forces ios to refresh and not use page caching when using the browser back and forward buttons */
@@ -318,7 +320,7 @@ function init(){
         });        
 
     }
-    },2000);
+    },200);
 
 
 
@@ -351,6 +353,19 @@ function init(){
         $theModal.modal();
     }*/
 
+    if($shareButton.length){
+        let $shareButtons = $('#shareButtons');
+        TweenMax.set($shareButtons,{scaleY:0,transformOrigin:'0% 0%'} );
+        
+        $shareButton.on('click',function(){
+            TweenMax.set($shareButtons,{scaleY:0,transformOrigin:'0% 0%'} );
+            TweenMax.to($shareButtons,0.25,{scaleY:1,transformOrigin:'0% 0%'} );
+        });
+     
+        $shareButtons.on('click',function(){
+           TweenMax.to($shareButtons,0.25,{scaleY:0,transformOrigin:'0% 0%'} ); 
+        });
+    }
 
     if($goBackArrow.length){
         $goBackArrow.on('click',function(){

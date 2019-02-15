@@ -9,9 +9,9 @@
 	<div id="alone" class="section">
         <div class="container">
             
-            <div class="fb-share-button" data-href="https://thomasbono.com/alone/?project=12&amp;index=2&amp;title=pleasantdale-chateau_7" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthomasbono.com%2Falone%2F%3Fproject%3D12%26index%3D2%26title%3Dpleasantdale-chateau_7&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+            
 
-            @include('svgs/shareButton')
+            
 
             <div id="shareButtonHolder">            
             	
@@ -35,11 +35,15 @@
 					$imgIndex = $_GET['index'];					
 					$size = 'full';
 
-					
-
+					$thisURL = urlencode('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);				    
 					?>
 
-					<div id="goBackArrow" data-where="{{$type[0]}}">@include('svgs.backButton')</div>
+					<div id = "shareButtonHolder" class="" data-href="{{$thisURL}}" >
+				    		@include('svgs/shareButton')				    		
+				  	</div>
+
+					<div id="goBackArrow" data-where="{{$type[0]}}">		@include('svgs.backButton')
+					</div>
 
 					<div class="row info">
 						<div class="cols col-md-6">

@@ -141,6 +141,54 @@ ul{
 a{
 	cursor: pointer;
 }
+
+#shareButtonHolder{
+	position: absolute;
+    top: 30px;
+    display: block;
+    z-index: 1002;
+    right: 32px;			    
+    #shareButton{
+    	width:40px;
+    	cursor: pointer;
+    	&:hover{
+    		.st0{
+    			fill:#333333;
+    		}
+    	}
+    }
+    #shareButtons{
+    	position: absolute;
+    	display: block;
+    	width: 50px;
+    	height: auto;
+    	top: 0;
+    	right:0;
+    	a{			    				    		
+			vertical-align: middle;
+			text-align: center;
+			color: #ffffff;
+			text-decoration: none;
+
+    		.socialButton{			    		
+	    		padding: 12px;			    		
+	    		
+	    		&.fb{
+	    			background-color: #3b5998;
+	    		}
+	    		&.tw{
+	    			background-color: #0084b4;
+	    		}
+	    		&.li{
+	    			background-color: #0077b5;
+	    		}
+	    		&.em{
+	    			background-color: $red;
+	    		}			    	
+    		}
+    	}			    	
+    }
+}
 .main{
 	padding-top: 120px;
 
@@ -360,6 +408,7 @@ a{
 			    	}
 			    }
 			}
+			
 			.item{
 				display: block;
 				width: 33.33%;
