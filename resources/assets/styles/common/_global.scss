@@ -355,12 +355,17 @@ a{
 			}
 		}
 
-		.details,.alone{
+		.details,.alone,.custom{
 			padding-bottom: 25px;
 			.info{											
 				.cols{
 					padding-right: 40px;
 		    		padding-left: 40px;
+		    		@media (max-width: $sm){
+				    	padding-right: 20px;
+		    			padding-left: 20px;
+					}
+
 		    		&.tech{
 		    			padding-top: 55px;
 		    			@media (max-width: $md){
@@ -422,6 +427,10 @@ a{
 							
 				height: auto; 
 				padding: 25px;
+				@media (max-width: $sm){
+				    padding: 25px 0;
+				}
+				
 				img{
 					width: 100%;
 					height: auto;
