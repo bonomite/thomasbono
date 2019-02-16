@@ -251,6 +251,7 @@ a{
 		.projects{
 			padding-bottom: 25px;
 			.poster{
+				position: relative;
 				cursor: pointer;		
 				width: 100%;
 				height: 260px;
@@ -519,17 +520,19 @@ a{
 						pointer-events:none;
 					}
 					&:hover{
-						.enlarge-icon{
-							opacity: 0.85;
-							-moz-transform: scale(1.1);
-							-webkit-transform: scale(1.1);
-							-o-transform: scale(1.1);
-							-ms-transform: scale(1.1);
-							transform: scale(1.1);	
-						}
-						&:before{
-							opacity: 1;
-						}
+						@media (min-width: 768px){						    
+							.enlarge-icon{
+								opacity: 0.85;
+								-moz-transform: scale(1.1);
+								-webkit-transform: scale(1.1);
+								-o-transform: scale(1.1);
+								-ms-transform: scale(1.1);
+								transform: scale(1.1);	
+							}
+							&:before{
+								opacity: 1;
+							}
+						}						
 					}
 					.enlarge-icon{
 						pointer-events:none;

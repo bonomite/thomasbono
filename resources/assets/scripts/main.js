@@ -304,7 +304,7 @@ function init(){
 
     /*masonry grid init*/
     setTimeout(function(){
-        console.log('grid init');
+        //console.log('grid init');
     if($grid.length){
         /*$grid.masonry({          
           itemSelector: '.grid-item',
