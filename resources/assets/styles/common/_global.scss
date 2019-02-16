@@ -141,7 +141,9 @@ ul{
 a{
 	cursor: pointer;
 }
-
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color:theme-color('secondary');
+}
 #shareButtonHolder{
 	position: absolute;
     top: 30px;
