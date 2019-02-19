@@ -7,8 +7,17 @@
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
         <span id="shield" class="navbar-toggler-icon">
-          <img class="logo bw" src="@asset('images/logo_2019_bw.png')">
+
+          <?php
+          $classes = get_body_class(); 
+          if (in_array('bono-home-template',$classes)) { ?>
+              <img class="logo bw" src="@asset('images/logo_2019_bw.png')">
+          <?php } else { ?>
+              <img class="logo bw" src="@asset('images/logo_2019_bw_noshadow.png')">              
+          <?php } ?>
+          
           <img class="logo color" src="@asset('images/logo_2019.png')">
+
         </span>
       </button>
       
