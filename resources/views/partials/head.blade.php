@@ -26,13 +26,13 @@
 	<?php } ?>
 
 
-	<link rel="apple-touch-icon" sizes="180x180" href="wp-content/themes/thomasbono/dist/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="wp-content/themes/thomasbono/dist/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="wp-content/themes/thomasbono/dist/images/favicon-16x16.png">
-	<link rel="manifest" href="wp-content/themes/thomasbono/dist/images/site.webmanifest">
-	<link rel="shortcut icon" href="wp-content/themes/thomasbono/dist/images/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/thomasbono/dist/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/thomasbono/dist/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/thomasbono/dist/images/favicon-16x16.png">
+	<link rel="manifest" href="/wp-content/themes/thomasbono/dist/images/site.webmanifest">
+	<link rel="shortcut icon" href="/wp-content/themes/thomasbono/dist/images/favicon.ico">
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-config" content="wp-content/themes/thomasbono/dist/images/browserconfig.xml">
+	<meta name="msapplication-config" content="/wp-content/themes/thomasbono/dist/images/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 
 
