@@ -1,1 +1,0 @@
-<h4 style="text-align: center">PHOTOGRAPHY</h4>
