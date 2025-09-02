@@ -1,0 +1,10 @@
+
+> dev
+> nuxt dev
+
+[nuxi] Nuxt 4.0.3 with Nitro 2.12.5
+
+  ➜ Local:    http://localhost:3000/
+  ➜ Network:  use --host to expose
+
+[nuxt:tailwindcss] ℹ Using default Tailwind CSS file

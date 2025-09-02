@@ -1,0 +1,24 @@
+{
+  "name": "thomas-bono-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/content": "latest",
+    "better-sqlite3": "latest",
+    "nuxt": "latest",
+    "vue": "latest",
+    "vue-router": "latest",
+    "vue-easy-lightbox": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "latest",
+    "@tailwindcss/aspect-ratio": "latest"
+  }
+}
